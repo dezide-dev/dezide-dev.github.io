@@ -1,0 +1,13 @@
+---
+layout: default
+---
+<h1>Problem API page</h1>
+
+<h3><a href="{% link problem/schema.yaml %}">OpenAPI Definition</a></h3>
+
+<h2>Problems</h2>
+{% for p in site.pages %}
+   {% if p.tags contains "error" %}
+     <h3><a href="{{ p.url }}">{{ p.title }}</a></h3>
+   {% endif %}
+{% endfor %}
