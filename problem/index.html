@@ -5,9 +5,20 @@ layout: default
 
 <h3><a href="{% link problem/schema.yaml %}">OpenAPI Definition</a></h3>
 
-<h2>Problems</h2>
+<h2>Generic problems</h2>
+<p>Shared, cross-service problem types under <code>/problem/{slug}</code>.</p>
 {% for p in site.pages %}
    {% if p.tags contains "error" %}
+     {% unless p.service %}
+       <h3><a href="{{ p.url }}">{{ p.title }}</a></h3>
+     {% endunless %}
+   {% endif %}
+{% endfor %}
+
+<h2>Troubleshooting problems</h2>
+<p>Service-specific problem types under <code>/problem/troubleshooting/{slug}</code>.</p>
+{% for p in site.pages %}
+   {% if p.service == "troubleshooting" %}
      <h3><a href="{{ p.url }}">{{ p.title }}</a></h3>
    {% endif %}
 {% endfor %}
