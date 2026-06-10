@@ -15,6 +15,6 @@ active).
     "type": "https://api.dezide.dev/problem/troubleshooting/guide-not-available",
     "title": "Guide Not Available",
     "status": 422,
-    "detail": "Guide not found"
+    "detail": "Guide is no longer available"
 }
 ```
